@@ -1,20 +1,5 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        img {
-            width: 200px;
-            height: 200px;
-            border-radius: 10px;
-            margin: 10px;
-        }
-
-    </style>
-</head>
+<%- include("includes/head.ejs") %>
 <body>
     <h2> This page belongs to @<%= data.name %> </h2>
     </h2>
@@ -32,6 +17,6 @@
         <p>Likes :<%=post.likes%>
      &nbsp;&nbsp;&nbsp;Comments :<%=post.comments%></p>
      <% } %>
-        
+    <script src="/index.js"></script>
 </body>
 </html>

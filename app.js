@@ -3,6 +3,8 @@ const app = express();
 const path = require('path');
 const port=8080; // Default port
 
+app.use(express.static(path.join(__dirname,"public/js"))); // Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname,"public/css")));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
