@@ -1,7 +1,6 @@
 const express= require('express');
 const app = express();
 const path = require('path');
-const { use } = require('react');
 const port=8080; // Default port
 
 app.set('view engine', 'ejs');
@@ -15,9 +14,15 @@ app.get('/', (req, res) => {
 
 app.get("/ig/:username", (req, res) => {
     let {username} = req.params;
-    const instaData=require("./data.json");
-    console.log(instaData);
-    res.render("instagram.ejs",{data:instaData[username]});
+    const instaData=require("./data.json");//instaData is an object with usernames as keys and their data as values
+    console.log(instaData[username]);
+    if (instaData[username]) {
+
+        res.render("instagram.ejs",{data:instaData[username]});
+    }
+    else{
+        res.render("error.ejs");
+    }
 });
  
 app.get("/hello", (req, res) => {
